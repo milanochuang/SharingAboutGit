@@ -2,8 +2,9 @@
 title: Github demo
 tags: presentation
 slideOptions:
-    theme: #00000
+    theme: dark
     transition: 'slide'
+
 ---
 
 <img src="https://i.imgur.com/AiMpIV1.png" style="background:none; border:none; box-shadow:none; max-width:40%;">
@@ -13,7 +14,6 @@ slideOptions:
 ---
 
 ## 今天會做什麼呢？
-
 - 什麼是 **git**
 - 為什麼要用 **git**
 - **GitHub**又是什麼？
@@ -47,7 +47,7 @@ slideOptions:
 
 ---
 
-## 到底什麼是 **git** ?
+# 到底什麼是 **git** ?
 
 ----
 
@@ -85,15 +85,15 @@ slideOptions:
 
 ---
 
-## 為什麼要用git?
+# 為什麼要用git?
 
 ----
 
-## 什麼是GitHub
+# 什麼是GitHub
 
 ---
 
-## 先來找小老師
+# 先來找小老師
 
 ----
 
@@ -108,7 +108,7 @@ brew install git
 
 ---
 
-## 從置物櫃開始
+# 從置物櫃開始
 
 ----
 
@@ -119,26 +119,26 @@ brew install git
 ----
 
 ### 建立ssh key (索取置物櫃鑰匙)
-1. 打開終端機(命令提示字元)
+1. 打開終端機(Git Bash)
 2. 輸入```ssh-keygen```
 ```bash=
+# For mac and Windows user
 $ ssh-keygen                                   # 產生金鑰
-Generating public/private rsa key pair.
-Enter file in which to save the key (/home/milanochuang/.ssh/id_rsa):   # 金鑰存放路徑，直接按 Enter
-Created directory '/home/milanochuang/.ssh'.
-Enter passphrase (empty for no passphrase):    # 密碼，可設定可不設定，設定的話每次上傳會多需要輸入一次密碼
-Enter same passphrase again:                   # 再輸入一次密碼
-The key fingerprint is:                        # 之後會顯示你的 fingerprint，到這裡就完成 key 的產生了
+
+# Generating public/private algorithm key pair.
+> Enter file in which to save the key (/Users/you/.ssh/id_ed25519):   # 金鑰存放路徑，直接按 Enter
+> Created directory '/Users/you/.ssh/id_ed25519'.
+> Enter passphrase (empty for no passphrase):    # 密碼，可設定可不設定，設定的話每次上傳會多需要輸入一次密碼
+> Enter same passphrase again:                   # 再輸入一次密碼
+> The key fingerprint is:                        # 之後會顯示你的 fingerprint，到這裡就完成 key 的產生了
 ```
 
 ----
 
-3. 使用cat讀檔指令，複製前面的路徑
 ```bash=
-$ cat /home/milanochuang/.ssh/id_rsa.pub           # 讀取檔案內容
-ssh-rsa $一連串金鑰$ milanochuang@MacBook Pro        # 從 ssh-rsa 複製到 username@pc-name
+$ cat /User/milanochuang/.ssh/id_rsa.pub           # 讀取檔案內容
+> ssh-rsa ~一連串金鑰~ milanochuang           # 從 ssh-rsa 複製到 username@pc-name
 ```
-![](https://i.imgur.com/SSjGJdM.png)
 
 ----
 
@@ -180,11 +180,19 @@ ssh-rsa $一連串金鑰$ milanochuang@MacBook Pro        # 從 ssh-rsa 複製�
 ----
 
 ## 開始交作業
+```bash=
+# 先做基本設定
+$ git config --global user.email "you@example.com"
+$ git config --global user.name "Your Name"
+```
+
+----
+
 1. 到桌面或是你喜歡的路徑建立新資料夾
 2. 使用終端機導引到你所設立的新資料夾
 3. 一行一行地打上GitHub提供給你的指令
 ```bash=
-cd /Users/milanochuang/Desktop/test
+$ cd /Users/milanochuang/Desktop/test
 ```
 ```bash=
 echo "# test" >> README.md   #建立markdown檔，內容為 # test
@@ -192,10 +200,10 @@ git init                     #git 初始設定
 git add README.md            #設立README Markdown檔
 git commit -m "first commit" #附上版本紀錄
 git branch -M master         #確認分支
-git remote add origin git@github.com:milanochuang/test.git   
+git remote add origin git@github.com:(github id)/(repo name).git   
                              #確認ssh key
 git push -u origin master    #提交檔案/程式碼
-Enter passphrase for key '/Users/milanochuang/.ssh/id_rsa': 
+> Enter passphrase for key '/Users/milanochuang/.ssh/id_rsa': 
                              #輸入剛剛設定的密碼（如果有的話）
 ```
 
@@ -206,7 +214,7 @@ Enter passphrase for key '/Users/milanochuang/.ssh/id_rsa':
 
 ---
 
-# 在GitHub新增檔案
+# 放作業到置物櫃
 
 ----
 
@@ -283,10 +291,11 @@ git push
 
 ---
 
-# 一次下載程式碼
+# 從別人置物櫃拿作業
 
 ----
 
+## 一次下載程式碼
 ```bash=
 git clone # <cloneaddress>
 # https://github.com/milanochuang/SharingAboutGit.git
@@ -426,6 +435,7 @@ git branch # 確認分支
 ----
 
 ## 什麼是```.gitignore```
+## 什麼又是 ```README.md```
 
 ----
 
